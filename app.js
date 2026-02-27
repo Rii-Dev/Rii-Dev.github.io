@@ -1,6 +1,7 @@
 const roles = [
   "Blue Team Enthusiast",
-  "Learner"
+  "Learner",
+  "Somebody Pleasure"
 ];
 
 let index = 0;

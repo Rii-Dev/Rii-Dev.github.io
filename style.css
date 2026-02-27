@@ -1,7 +1,7 @@
 :root {
   --bg: #0f1115;
   --panel: #171a21;
-  --border: #262a33;
+  --border: #323741;
   --accent: #4da3ff;
   --text: #d1d5db;
   --muted: #6b7280;
@@ -39,8 +39,12 @@ body {
 }
 
 @keyframes moveGrid {
-  from { background-position: 0 0; }
-  to { background-position: 40px 40px; }
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 40px;
+  }
 }
 
 /* ================= LAYOUT ================= */
@@ -79,9 +83,15 @@ body {
   margin-right: 6px;
 }
 
-.terminal-bar span:nth-child(1) { background: #ff5f56; }
-.terminal-bar span:nth-child(2) { background: #ffbd2e; }
-.terminal-bar span:nth-child(3) { background: #27c93f; }
+.terminal-bar span:nth-child(1) {
+  background: #ff5f56;
+}
+.terminal-bar span:nth-child(2) {
+  background: #ffbd2e;
+}
+.terminal-bar span:nth-child(3) {
+  background: #27c93f;
+}
 
 .terminal-bar p {
   margin-left: auto;
@@ -110,7 +120,7 @@ body {
 
 /* PROFILE */
 .profile h1 {
-  font-size: 26px;
+  font-size: 1.8rem;
   margin-bottom: 8px;
 }
 
@@ -121,7 +131,7 @@ body {
 }
 
 .role {
-  font-size: 1.rem;
+  font-size: 1.2rem;
   color: var(--muted);
 }
 
@@ -135,7 +145,9 @@ body {
 }
 
 @keyframes blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
 
 /* ================= SECTIONS ================= */
@@ -154,7 +166,7 @@ body {
 .section-title {
   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 4rem;
+  margin-bottom: 0.5rem;
 }
 
 .section-subtitle {
@@ -254,5 +266,9 @@ body {
 
   .profile h1 {
     font-size: 20px;
+  }
+
+  .role {
+    font-size: 15px;
   }
 }
