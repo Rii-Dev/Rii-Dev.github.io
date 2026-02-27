@@ -21,14 +21,14 @@ body {
   color: var(--text);
   min-height: 100vh;
   overflow-x: hidden;
+  padding: 50px;
 }
 
 /* ================= GRID BACKGROUND ================= */
 
 .grid-bg {
   position: fixed;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background-image:
     linear-gradient(var(--border) 1px, transparent 1px),
     linear-gradient(90deg, var(--border) 1px, transparent 1px);
@@ -39,12 +39,8 @@ body {
 }
 
 @keyframes moveGrid {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 40px 40px;
-  }
+  from { background-position: 0 0; }
+  to { background-position: 40px 40px; }
 }
 
 /* ================= LAYOUT ================= */
@@ -52,19 +48,19 @@ body {
 .wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* BUKAN center */
   min-height: 100vh;
-  padding: 20px;
 }
 
 .terminal {
-  width: 600px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 600px;
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 8px;
   box-shadow: 0 0 30px rgba(77, 163, 255, 0.1);
   backdrop-filter: blur(4px);
+  overflow: hidden;
 }
 
 /* ================= TERMINAL BAR ================= */
@@ -83,15 +79,9 @@ body {
   margin-right: 6px;
 }
 
-.terminal-bar span:nth-child(1) {
-  background: #ff5f56;
-}
-.terminal-bar span:nth-child(2) {
-  background: #ffbd2e;
-}
-.terminal-bar span:nth-child(3) {
-  background: #27c93f;
-}
+.terminal-bar span:nth-child(1) { background: #ff5f56; }
+.terminal-bar span:nth-child(2) { background: #ffbd2e; }
+.terminal-bar span:nth-child(3) { background: #27c93f; }
 
 .terminal-bar p {
   margin-left: auto;
@@ -105,7 +95,6 @@ body {
   padding: 25px;
   display: flex;
   flex-direction: column;
-  min-height: 500px;
 }
 
 /* PROMPT */
@@ -127,7 +116,6 @@ body {
 .typing-wrapper {
   display: inline-flex;
   align-items: center;
-  min-height: 24px;
 }
 
 .role {
@@ -145,20 +133,18 @@ body {
 }
 
 @keyframes blink {
-  50% {
-    opacity: 0;
-  }
+  50% { opacity: 0; }
 }
 
 /* ================= SECTIONS ================= */
 
 .section {
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .section h3 {
   font-size: 14px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   color: var(--accent);
   letter-spacing: 1px;
 }
@@ -166,14 +152,14 @@ body {
 .section-title {
   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .section-subtitle {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--text);
-  letter-spacing: 0.5px;
 }
+
 /* ================= PROJECT CARDS ================= */
 
 .card {
@@ -197,6 +183,7 @@ body {
 
 .connect {
   display: flex;
+  flex-wrap: wrap;
   gap: 15px;
   margin-top: 10px;
 }
@@ -227,13 +214,12 @@ body {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  margin-top: auto;
-  padding-top: 1.25rem;
-  font-size: 0.9rem;
+  margin-top: 20px; /* BUKAN auto */
+  padding-top: 1rem;
+  font-size: 0.85rem;
   color: var(--muted);
 }
 
-/* STATUS DOT */
 .status-dot {
   width: 8px;
   height: 8px;
@@ -243,32 +229,23 @@ body {
 }
 
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.4);
-    opacity: 0.6;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 640px) {
-  .terminal {
-    width: 100%;
-  }
-
   .profile h1 {
-    font-size: 20px;
+    font-size: 1.4rem;
   }
 
   .role {
-    font-size: 15px;
+    font-size: 1rem;
+  }
+
+  .terminal-body {
+    padding: 18px;
   }
 }
