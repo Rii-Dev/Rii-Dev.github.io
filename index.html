@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Zane's Terminal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="grid-bg"></div>
+
+    <div class="wrapper">
+      <div class="terminal">
+        <!-- TERMINAL BAR -->
+        <div class="terminal-bar">
+          <span></span><span></span><span></span>
+          <p>Zane@system:~</p>
+        </div>
+
+        <!-- TERMINAL BODY -->
+        <div class="terminal-body">
+          <div class="prompt">
+            <span class="user">Zane@Localhost</span>
+            <span>:~$ whoami -v</span>
+          </div>
+
+          <div class="profile">
+            <h1>Zane Still Learning</h1>
+            <div class="typing-wrapper">
+              <span id="typing" class="role"></span>
+              <span class="cursor-blink"></span>
+            </div>
+          </div>
+
+          <!-- PROJECTS -->
+          <div class="section">
+            <h3>Projects</h3>
+
+            <a href="#" class="card">
+              <strong>Cyber Things</strong><br />
+              Tools And Exploit Code
+            </a>
+
+            <a href="#" class="card">
+              <strong>Zane's Note</strong><br />
+              All Notes about CyberSec And Data
+            </a>
+
+            <a href="#" class="card">
+              <p class="section-title">Just Blog</p>
+              <p class="section-subtitle">Tools and Exploit Code</p>
+            </a>
+          </div>
+
+          <!-- CONNECT -->
+          <div class="section">
+            <h3>Connect</h3>
+
+            <div class="connect">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-discord"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="terminal-footer">
+            <span class="status-dot"></span>
+            <span>Communication is safe && Ready For Collaboration</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

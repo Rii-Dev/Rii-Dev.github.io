@@ -1,0 +1,258 @@
+:root {
+  --bg: #0f1115;
+  --panel: #171a21;
+  --border: #262a33;
+  --accent: #4da3ff;
+  --text: #d1d5db;
+  --muted: #6b7280;
+  --green: #22c55e;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ================= GRID BACKGROUND ================= */
+
+.grid-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.08;
+  animation: moveGrid 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveGrid {
+  from { background-position: 0 0; }
+  to { background-position: 40px 40px; }
+}
+
+/* ================= LAYOUT ================= */
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.terminal {
+  width: 600px;
+  max-width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(77, 163, 255, 0.1);
+  backdrop-filter: blur(4px);
+}
+
+/* ================= TERMINAL BAR ================= */
+
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.terminal-bar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.terminal-bar span:nth-child(1) { background: #ff5f56; }
+.terminal-bar span:nth-child(2) { background: #ffbd2e; }
+.terminal-bar span:nth-child(3) { background: #27c93f; }
+
+.terminal-bar p {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ================= TERMINAL BODY ================= */
+
+.terminal-body {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+}
+
+/* PROMPT */
+.prompt {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.user {
+  color: var(--accent);
+}
+
+/* PROFILE */
+.profile h1 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.typing-wrapper {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+}
+
+.role {
+  font-size: 1.rem;
+  color: var(--muted);
+}
+
+/* CURSOR BLINK */
+.cursor-blink {
+  width: 3px;
+  height: 1em;
+  background: var(--accent);
+  margin-left: 4px;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ================= SECTIONS ================= */
+
+.section {
+  margin-top: 15px;
+}
+
+.section h3 {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4rem;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--text);
+  letter-spacing: 0.5px;
+}
+/* ================= PROJECT CARDS ================= */
+
+.card {
+  display: block;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: var(--text);
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 15px rgba(77, 163, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ================= CONNECT ICONS ================= */
+
+.connect {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.connect a {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.connect a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(77, 163, 255, 0.08);
+  box-shadow: 0 0 10px rgba(77, 163, 255, 0.3);
+}
+
+/* ================= FOOTER ================= */
+
+.terminal-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* STATUS DOT */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 640px) {
+  .terminal {
+    width: 100%;
+  }
+
+  .profile h1 {
+    font-size: 20px;
+  }
+}
