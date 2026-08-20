@@ -37,15 +37,7 @@ export const projects = [
     link: "https://github.com/IkanParii/WebComic-KBD-Laravel",
     cta: "View Repo",
   },
-  {
-    category: "tool",
-    type: "Temporary Mail Tool",
-    title: "Void Mail : Temporary Email Generator",
-    desc: "VoidMail adalah aplikasi temporary mail berbasis privasi yang digunakan untuk membuat alamat email sementara tanpa registrasi.",
-    tags: ["Web Development", "Privacy", "JavaScript"],
-    link: "https://void-mail.ikanparii.workers.dev/",
-    cta: "Try Tool",
-  },
+  
   // Writeup atau blog yang berisi dokumentasi belajar.
   {
     category: "writeup",
